@@ -1,4 +1,5 @@
 import React from 'react';
+import ExampleSection from '../ExampleSection';
 import Section from '../Section';
 
 const App = props => {
@@ -9,6 +10,7 @@ const App = props => {
         <ul className="sections-holder" data-server-rendered="true">
           <div className="business-template section-440241" data-server-rendered="true" data-model-id={section.id}>
             <div className={`section-${section.rootKey} section-header business-template`} id={`section-${section.id}`}>
+              <ExampleSection {...props}/>
               <Section {...props}/>
             </div>
           </div>
