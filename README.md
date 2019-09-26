@@ -2,13 +2,13 @@
 
 The purpose of this project is to create new themes for Bizzabo website sections.
 
-In the `src` you will find a filed called `Section.js`
-This file is a template for the new Section.
+In `src` folder you will find a filed called `Section.js`.  
+This file is a template for the new section theme.  
 Please duplicate this file before you start.
 
-You can find an example in the `ExampleSection.js` file.
-It contains a real section that you can take inspiration from.
-You can use the css classes that are used in the `ExampleSection`, but it's not a must.
+You can find an example in the `ExampleSection.js` file.  
+It contains a real section that you can take inspiration from.  
+You can use the css classes that are used in the `ExampleSection.js`, but it's not a must.  
 Please don't edit any other file other then your duplicated `Section.js` file.
 
 ## Create React App
