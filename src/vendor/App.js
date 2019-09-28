@@ -1,6 +1,6 @@
 import React from 'react';
 import ExampleSection from '../ExampleSection';
-import Section from '../Section';
+import OurSpeakers from '../OurSpeakers';
 
 const App = props => {
   const {section} = props;
@@ -11,7 +11,7 @@ const App = props => {
           <div className="business-template section-440241" data-server-rendered="true" data-model-id={section.id}>
             <div className={`section-${section.rootKey} section-header business-template`} id={`section-${section.id}`}>
               <ExampleSection {...props}/>
-              <Section {...props}/>
+              <OurSpeakers {...props}/>
             </div>
           </div>
         </ul>
