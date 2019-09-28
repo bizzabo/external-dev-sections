@@ -3,6 +3,7 @@ import React from "react";
 import { createUseStyles } from "react-jss";
 
 import ImageBox from "./ImageBox";
+import SocialBox from "./SocialBox";
 
 const SpeakerBox = ({ speaker }) => {
   const classes = useStyles();
@@ -18,14 +19,10 @@ const SpeakerBox = ({ speaker }) => {
           </span>
           <span className={classes.speakerLocation}>{speaker.location}</span>
         </div>
-        <div className={classes.socialIcons}>
-          <a className={classes.socialLink} href={speaker.linkedinUrl}>
-            <i className="fa fa-linkedin"></i>
-          </a>
-          <a className={classes.socialLink} href={speaker.twitterUrl}>
-            <i className="fa fa-twitter"></i>
-          </a>
-        </div>
+        <SocialBox
+          linkedinUrl={speaker.linkedinUrl}
+          twitterUrl={speaker.linkedinUrl}
+        />
       </div>
     </div>
   );
