@@ -32,7 +32,7 @@ const useStyles = createUseStyles({
   },
 
   horizontalLine: {
-    position: "absolute",
+    //position: "absolute",
     height: "4px",
     width: "40 %",
     backgroundColor: "#DA5E67",
