@@ -101,8 +101,10 @@ const OurSpeakers = props => {
                 <span className={styles.speakerLocation}>{speaker.location}</span>
               </div>
               <div className={styles.socialIcons}>
-                <i className="fa fa-linkedin"></i>
-                <i className="fa fa-twitter"></i>
+                <a className={styles.socialLink} href="#"><i className="fa fa-linkedin"></i>
+                </a>
+                <a className={styles.socialLink} href="#"><i className="fa fa-twitter"></i>
+                </a>
               </div>
             </div>
           </div>

@@ -53,6 +53,9 @@
   width: 60px;
   justify-content: space-between;
   font-size: 24px;
+  .socialLink{
+    color: #ffffff;
+  }
 }
 
 /* Create four equal columns that sits next to each other */
@@ -84,8 +87,8 @@
   }
   :global {
     .sections-holder {
-      padding-left: 0px !important;
-      padding-right: 0px !important;
+      padding-left: 0px;
+      padding-right: 0px;
     }
   }
 }
