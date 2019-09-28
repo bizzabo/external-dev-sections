@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import T from "prop-types";
 
 import { createUseStyles } from "react-jss";
@@ -6,16 +6,10 @@ import { createUseStyles } from "react-jss";
 const ImageBox = ({ imageUrl }) => {
   const classes = useStyles();
   return (
-    <Fragment>
-      <div className={classes.imageContainer}>
-        <img
-          src={imageUrl}
-          alt="img"
-          className={classes.imageContainer.image}
-        />
-        <div className={classes.horizontalLine} />
-      </div>
-    </Fragment>
+    <div className={classes.imageContainer}>
+      <img src={imageUrl} alt="img" className={classes.imageContainer.image} />
+      <div className={classes.horizontalLine} />
+    </div>
   );
 };
 
@@ -27,7 +21,7 @@ const useStyles = createUseStyles({
   imageContainer: {
     position: "relative",
     image: {
-      width: "100 %"
+      width: "100%"
     }
   },
 

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import T from "prop-types";
 
 import { createUseStyles } from "react-jss";
@@ -7,12 +7,10 @@ const SocialBox = ({ designation, location }) => {
   const classes = useStyles();
 
   return (
-    <Fragment>
-      <div className={classes.speakerInfo}>
-        <span className={classes.speakerDesignation}>{designation}</span>
-        <span className={classes.speakerLocation}>{location}</span>
-      </div>
-    </Fragment>
+    <div className={classes.speakerInfo}>
+      <span className={classes.speakerDesignation}>{designation}</span>
+      <span className={classes.speakerLocation}>{location}</span>
+    </div>
   );
 };
 

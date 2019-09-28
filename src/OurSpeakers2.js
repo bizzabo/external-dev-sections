@@ -6,9 +6,9 @@ import cx from "classnames";
 
 import { createUseStyles } from "react-jss";
 
-import SpeakerBox from "./SpeakerBox";
+import SpeakerBox from "./components/OurSpeakers/SpeakerBox";
 
-import { speakersData } from "./speakersData";
+import { speakersData } from "./data/speakersData";
 
 const OurSpeakers = props => {
   const classes = useStyles();

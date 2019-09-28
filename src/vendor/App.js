@@ -1,6 +1,6 @@
 import React from "react";
 import ExampleSection from "../ExampleSection";
-import OurSpeakers from "../OurSpeakers/OurSpeakers";
+import OurSpeakers from "../OurSpeakers2";
 
 const App = props => {
   const { section } = props;
