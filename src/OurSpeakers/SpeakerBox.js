@@ -2,20 +2,15 @@ import React from "react";
 
 import { createUseStyles } from "react-jss";
 
+import ImageBox from "./ImageBox";
+
 const SpeakerBox = ({ speaker }) => {
   const classes = useStyles();
 
   return (
     <div className={classes.column}>
       <h4 className={classes.peopleHeading}>{speaker.name}</h4>
-      <div className={classes.imageContainer}>
-        <img
-          src={speaker.imageUrl}
-          alt="img"
-          className={classes.imageContainer.image}
-        />
-        <div className={classes.horizontalLine} />
-      </div>
+      <ImageBox imageUrl={speaker.imageUrl} />
       <div className={classes.itemFooter}>
         <div className={classes.speakerInfo}>
           <span className={classes.speakerDesignation}>
@@ -44,12 +39,6 @@ const useStyles = createUseStyles({
   },
   peopleHeading: {
     color: "#ffffff"
-  },
-  imageContainer: {
-    position: "relative",
-    image: {
-      width: "100 %"
-    }
   },
   itemFooter: {
     display: "flex",
@@ -80,6 +69,12 @@ const useStyles = createUseStyles({
   },
   socialLink: {
     color: "#ffffff"
+  },
+  "@media (min-width: 800px)": {
+    column: {
+      flex: "50 %",
+      maxWidth: "50%"
+    }
   }
 });
 
