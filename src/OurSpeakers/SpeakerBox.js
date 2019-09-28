@@ -1,4 +1,5 @@
 import React from "react";
+import T from "prop-types";
 
 import { createUseStyles } from "react-jss";
 
@@ -25,6 +26,10 @@ const SpeakerBox = ({ speaker }) => {
       </div>
     </div>
   );
+};
+
+T.propTypes = {
+  speaker: T.object.isRequired
 };
 
 const useStyles = createUseStyles({

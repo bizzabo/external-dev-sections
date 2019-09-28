@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import T from "prop-types";
 
 import { createUseStyles } from "react-jss";
 
@@ -13,6 +14,11 @@ const SocialBox = ({ designation, location }) => {
       </div>
     </Fragment>
   );
+};
+
+T.propTypes = {
+  designation: T.string.isRequired,
+  location: T.string.isRequired
 };
 
 const useStyles = createUseStyles({

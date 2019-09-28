@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import T from "prop-types";
 
 import { createUseStyles } from "react-jss";
 
@@ -17,6 +18,11 @@ const SocialBox = ({ linkedinUrl, twitterUrl }) => {
       </div>
     </Fragment>
   );
+};
+
+T.propTypes = {
+  linkedinUrl: T.string.isRequired,
+  twitterUrl: T.string.isRequired
 };
 
 const useStyles = createUseStyles({
