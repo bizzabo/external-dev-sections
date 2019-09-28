@@ -1,29 +1,18 @@
 import React from "react";
 import T from "prop-types";
+import map from "lodash/map";
 
 import { createUseStyles } from "react-jss";
 
-import ImageBox from "./ImageBox";
-import SocialBox from "./SocialBox";
-import InfoBox from "./InfoBox";
+import Speaker from "./Speaker";
 
-const SpeakerBox = ({ speaker }) => {
+const SpeakerBox = ({ speakerList }) => {
   const classes = useStyles();
-
   return (
-    <div className={classes.column}>
-      <h4 className={classes.peopleHeading}>{speaker.name}</h4>
-      <ImageBox imageUrl={speaker.imageUrl} />
-      <div className={classes.itemFooter}>
-        <InfoBox
-          designation={speaker.designation}
-          location={speaker.location}
-        />
-        <SocialBox
-          linkedinUrl={speaker.linkedinUrl}
-          twitterUrl={speaker.linkedinUrl}
-        />
-      </div>
+    <div className={classes.gallery}>
+      {map(speakerList, speaker => (
+        <Speaker key={speaker.name} speaker={speaker} />
+      ))}
     </div>
   );
 };
@@ -33,27 +22,28 @@ T.propTypes = {
 };
 
 const useStyles = createUseStyles({
-  column: {
-    width: "230px",
-    margin: "0 24px 48px 24px",
-    position: "relative"
-  },
-  peopleHeading: {
-    color: "#ffffff"
-  },
-  itemFooter: {
+  gallery: {
+    backgroundColor: "#7156DD",
+    padding: "120px 10%",
+    margin: "0 10%",
     display: "flex",
-    justifyContent: "space-between",
-    alignIitems: "center",
-    margin: "6px 0",
-    paddingLeft: "2px"
+    flexWrap: "wrap",
+    alignContent: "space-around",
+    justifyContent: "center"
   },
   "@media (min-width: 800px)": {
-    column: {
-      flex: "50 %",
-      maxWidth: "50%"
-    }
+    backgroundColor: "#7156DD",
+    padding: "120px 0",
+    margin: 0
   }
 });
+
+T.propTypes = {
+  speakerList: T.arrayOf(Object)
+};
+
+T.defaultProps = {
+  speakerList: []
+};
 
 export default SpeakerBox;
