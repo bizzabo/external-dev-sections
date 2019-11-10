@@ -29,7 +29,6 @@ For example:
         - type: `margin`/`padding`
         - direction: `left`, `right`, `bottom`, `top`, `horizontal`, `vertical`,
         - size: `small`, `medium`, `large`
-    and many more.
 
 
 ## Important classes
