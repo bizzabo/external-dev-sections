@@ -86,7 +86,8 @@ Inside the section prop, you will find all the relevant data for the `people` se
  Each `contact` can be a speaker and than he will have a `speakerId` prop. In this case, the contact img should be wrapper with an A tag.  
 
 If the `contact` doesn't have image url (`thumbnailUrl`), show the placeholder instead.
-When hovering over a contact image, there is a small zoom effect. You can see it in the example section.
+When hovering over a contact image, there is a small zoom effect. You can see it in the mock when hovering the 2nd image from right on the top row.
+Please animate this effect (we can't mock animation in inVision)
 
 In the `people` example section, you can find an example of all the use cases described above.
 
