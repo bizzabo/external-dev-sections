@@ -13,7 +13,33 @@ It contains a real sections that you can take inspiration from.
 You can use the css classes that are used in the example sections, but it's not a must.  
 Please don't edit any other file other then your duplicated `Section.js` file.
 
-### Few more points
+### Few important points
+- css should be implemented using `react-jss` module.  
+classes must be static so use the syntax bellow.
+In this way, we can still control over the classes in the markup.  
+https://cssinjs.org/jss-plugin-nested?v=v10.0.0
+```
+const styles = {
+  container: {
+    padding: 20,
+    '&:hover': {
+      background: 'blue'
+    },
+    // Add a global .clear class to the container.
+    '&.clear': {
+      clear: 'both'
+    },
+    // Reference a global .button scoped to the container.
+    '& .button': {
+      background: 'red'
+    },
+    // Use multiple container refs in one selector
+    '&.selected, &.active': {
+      border: '1px solid red'
+    }
+  }
+}
+```
 - `!important` is not allowed.
 - use bootstrap grid and layout classes for positioning.   
 For example:
