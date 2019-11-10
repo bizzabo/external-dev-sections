@@ -1,8 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 
-const Section = props => {
-    const {section} = props;
+export default ({section}) => {
     return (
       <div className="rowHolder element-1469903 atom-sectionSecondary cover-photo-background custom-space-top custom-space-bottom" style={{backgroundImage: 'url("https://res.cloudinary.com/bizzaboprod/image/upload/v1419411425/SplitShire-7662_eqi7sf")'}}>
         <div className="atom-sectionMain main-app-container header business">
@@ -67,6 +66,4 @@ const Section = props => {
         </div>
       </div>
     );
-  }
-
-  export default Section;
+  };
