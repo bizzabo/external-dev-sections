@@ -13,11 +13,30 @@ It contains a real sections that you can take inspiration from.
 You can use the css classes that are used in the example sections, but it's not a must.  
 Please don't edit any other file other then your duplicated `Section.js` file.
 
+### Few more points
+- `!important` is not allowed.
+- use bootstrap grid and layout classes for positioning.   
+For example:
+    - Grid classes: col-${size}-${width}  
+    For example: `col-xs-12` to span the block on 100% width. 
+    All the available options are in the `bootstrap` docs.
+    options are: 
+        - size: `xs`, `sm`, `md`, `lg`,
+        - width: `x between 1-12`. where x is (100 / (12/x) )% of the container.
+    - `padding / margin` classes: ${type}-${direction}-${size}.  
+    For example: `padding-left-small`.  
+    options are: 
+        - type: `margin`/`padding`
+        - direction: `left`, `right`, `bottom`, `top`, `horizontal`, `vertical`,
+        - size: `small`, `medium`, `large`
+    and many more.
+
+
 ## Important classes
 There are several important classes that must to be included in the section markup:
 - `atom-sectionMain` should be on the top level wrapper of the section  
 - `element-${element.id}` should wrap every element in the section. (for example in the `people` section, `header` and `people` elements).
-- Please find another important classes that are section-specific.
+- Find another important classes that are section-specific.
 
 ## Section-specific instruction
 ### People
@@ -29,7 +48,7 @@ The number of contacts to show in each view size:
 - Ipad view - show up to 3 contacts in a row.
 - Mobile view - show up to 1 contacts in a row.
 
-Contact should be aligned to the center.
+Contacts should be aligned to the center.
 
 Inside the section prop, you will find all the relevant data for the `people` section.
 `people` section elements are `people` and `header`.  
