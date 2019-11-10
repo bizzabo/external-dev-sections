@@ -2,7 +2,7 @@
 
 The purpose of this project is to create new themes for Bizzabo website sections.
 
-In `src` folder you will find a filed called `Section.js`.  
+In `src` folder you will find a file called `Section.js`.  
 This file is a template for the new section theme.  
 Please duplicate this file before you start.
 Inside the `props` object you'll find the relevant data for your section. Please find below section-specific instructions for your your development process.
@@ -21,6 +21,16 @@ There are several important classes that must to be included in the section mark
 
 ## Section-specific instruction
 ### People
+A mock for the new `people` section can be found here:
+https://projects.invisionapp.com/share/CYUO0Z0MB5G#/screens/391670499_4inRow-1_Copy_6
+
+The number of contacts to show in each view size:
+- Web view - show up to 4 contacts in a row.
+- Ipad view - show up to 3 contacts in a row.
+- Mobile view - show up to 1 contacts in a row.
+
+Contact should be aligned to the center.
+
 Inside the section prop, you will find all the relevant data for the `people` section.
 `people` section elements are `people` and `header`.  
  
@@ -32,12 +42,7 @@ Inside the section prop, you will find all the relevant data for the `people` se
  Each `contact` can be a speaker and than he will have a `speakerId` prop. In this case, the contact img should be wrapper with an A tag.  
 
 If the `contact` doesn't have image url (`thumbnailUrl`), show the placeholder instead.
-When hovering over an contact image, there is a small zoom effect. You can see it in the example section.
-
-The number of contacts to show in each view size:
-- Web view - show up to 4 contacts in a row.
-- Ipad view - show up to 3 contacts in a row.
-- Mobile view - show up to 1 contacts in a row.
+When hovering over a contact image, there is a small zoom effect. You can see it in the example section.
 
 In the `people` example section, you can find an example of all the use cases described above.
 
