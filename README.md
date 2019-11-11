@@ -2,9 +2,11 @@
 
 The purpose of this project is to create new themes for Bizzabo website sections.
 
+**Please create a branch with your name and work on that branch. Once done, open a PR to master.**
+
 In `src` folder you will find a file called `Section.js`.  
-This file is a template for the new section theme.  
-Please duplicate this file before you start.
+This file is a template component for the new section theme.  
+The task is the implement this component.
 Inside the `props` object you'll find the relevant data for your section. Please find below section-specific instructions for your your development process.
 Inside the `Section.d.ts` file you can find TypeScript interfaces that describe the data structure for the section.
 
