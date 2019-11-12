@@ -74,7 +74,6 @@ const App = props => {
           <div className="business-template section-440241" data-server-rendered="true" data-model-id={headerSectionProps.id}>
             <div className={`section-${headerSectionProps.rootKey} section-header business-template`} id={`section-${headerSectionProps.id}`}>
               <Header section={headerSectionProps} />
-              <NewHeader section={headerSectionProps} />
               <People section={peopleSectionProps} />
               <NewPeople section={peopleSectionProps} />
             </div>
