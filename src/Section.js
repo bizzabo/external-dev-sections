@@ -2,7 +2,6 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
 import classnames from "classnames";
-import classes from "*.module.sass";
 const useStyles = createUseStyles({
   gravatar: {
     position: "absolute",
@@ -29,6 +28,14 @@ const useStyles = createUseStyles({
     "& .contact-company": {
       fontSize: "0.8rem",
       fontWeight: "bold"
+    }
+  },
+  socialLinks: {
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "center",
+    "& i": {
+      margin: 2
     }
   }
 });
@@ -145,6 +152,8 @@ const ContactImage = props => {
   return retVal;
 };
 function ContactSocial({ facebookPage, linkedinPage, twitter }) {
+  const classes = useStyles();
+
   return (
     <div className={classes.socialLinks}>
       <a href={facebookPage} target="_blank" rel="noopener noreferrer">
