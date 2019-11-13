@@ -15,6 +15,26 @@ const useStyles = createUseStyles({
     transform: "translate(0, -10%)",
     fontSize: 70
   },
+  contactContainer: {
+    display: "block",
+    width: "max-content",
+    marginBottom: 24,
+
+    "& .hover": {
+      overflow: "hidden"
+    },
+
+    "&  .img": {
+      height: "240px",
+      width: "240px",
+      transition: "all .3s ease-in"
+    },
+    "& :hover ": {
+      "& .img": {
+        transform: "scale(1.2)"
+      }
+    }
+  },
   contactInfoContainer: {
     paddingTop: 8,
     color: "#000",
@@ -40,20 +60,58 @@ const useStyles = createUseStyles({
   },
 
   hovereffect: {
-    width: "100%",
-    height: "100%",
-    float: "left",
-    overflow: "hidden",
-    position: "relative",
-    textAlign: "center",
-    cursor: "default",
-    "& :hover img": {
-      transform: "scale(1.2)"
+    overflow: "hidden"
+  },
+  sectionContainer: {
+    "& .main-app-container": {
+      "& .center-items": {
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "row",
+        justifyContent: "space-around",
+        float: "none"
+      }
+    }
+  },
+  "@media ( max-width: 1140px )": {
+    sectionContainer: {
+      "& .main-app-container": {
+        "& .center-items": {
+          flexWrap: "wrap"
+        }
+      }
+    }
+  },
+  "@media ( max-width: 768px )": {
+    sectionContainer: {
+      "& .main-app-container": {
+        "& .center-items": {
+          flexWrap: "wrap"
+        }
+      }
     },
-    "& img": {
-      display: "block",
-      position: "relative",
-      transition: "all 0.4s ease-'in'"
+    contactContainer: {
+      "&  .img": {
+        height: "180px",
+        width: "180px",
+        transition: "all .3s ease-in"
+      }
+    }
+  },
+  "@media ( max-width: 500px )": {
+    sectionContainer: {
+      "& .main-app-container": {
+        "& .center-items": {
+          flexWrap: "wrap"
+        }
+      }
+    },
+    contactContainer: {
+      "&  .img": {
+        height: "160px",
+        width: "160px",
+        transition: "all .3s ease-in"
+      }
     }
   }
 });
@@ -61,18 +119,19 @@ export default ({ section }) => {
   const { elements: [header, people] = [] } = section;
   const { text, rootKey } = header;
   const { contacts, contactListId } = people;
+  const classes = useStyles();
   console.log(section);
   return (
-    <div className="atom-sectionMain row">
-      <div className="col-xs-12 text-center attendees-faces contacts-element">
+    <div className={classnames("atom-sectionMain", classes.sectionContainer)}>
+      <div className="col-xs-12 col-sm-12 text-center">
         <div className="main-app-container  ">
           <div
             className={`col-xs-12 text-center form-group element-${rootKey}`}
           >
             <h2 className="atom-main medium custom-font">{text}</h2>
           </div>
-          <div className="col-xs-12 text-center attendees-faces-holder">
-            <div className="row js-contacts-element">
+          <div className="col-xs-12 text-center ">
+            <div className=" center-items ">
               {contactListId ? (
                 contacts.map(contact => (
                   <Contact
@@ -112,9 +171,14 @@ function Contact({ contact, rootKey }) {
   } = contact;
   const classes = useStyles();
   return (
-    <div className="col-md-3 col-sm-4 col-xs-12 entity-photo-holder">
+    <div
+      className={classnames(
+        "col-md-3 col-sm-4 col-xs-12 ",
+        classes.contactContainer
+      )}
+    >
       <div classes={classes.hovereffect}>
-        <div className={`element-${rootKey}`}>
+        <div className={`element-${rootKey} hover`}>
           {speakerId ? (
             <a href={`/5794/agenda/speakers/${speakerId}`}>
               <ContactImage
@@ -157,13 +221,19 @@ const ContactImage = props => {
   let retVal = null;
 
   if (thumbnailUrl) {
-    retVal = <img src={thumbnailUrl} className="center-block" alt="speaker" />;
+    retVal = (
+      <img
+        src={thumbnailUrl}
+        className=" img-responsive center-block img"
+        alt="speaker"
+      />
+    );
   } else {
     retVal = (
       <div>
         <img
           src="https://events.bizzabo.com/images/home/empty_placeholder.png"
-          className="img-responsive  center-block"
+          className="img-responsive  center-block img"
           alt="placeholder"
         />
         <div className={classes.gravatar}>
