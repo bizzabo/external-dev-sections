@@ -37,6 +37,32 @@ const useStyles = createUseStyles({
     "& i": {
       margin: 2
     }
+  },
+
+  hovereffect: {
+    width: "100%",
+    height: "100%",
+    float: "left",
+    overflow: "hidden",
+    position: "relative",
+    textAlign: "center",
+    cursor: "default",
+    "& :hover img": {
+      transform: "scale(1.2)"
+    },
+    "& .overlay": {
+      width: "100%",
+      height: "100%",
+      position: "absolute",
+      overflow: "hidden",
+      top: "0",
+      left: "0"
+    },
+    "& img": {
+      display: "block",
+      position: "relative",
+      transition: "all 0.4s ease-'in'"
+    }
   }
 });
 export default ({ section }) => {
@@ -92,23 +118,30 @@ function Contact({ contact, rootKey }) {
     title,
     company
   } = contact;
+  const classes = useStyles();
   return (
-    <div className="col-md-3 col-sm-6 col-xs-12 entity-photo-holder">
-      <div className={`element-${rootKey}`}>
-        {speakerId ? (
-          <a href={`/5794/agenda/speakers/${speakerId}`}>
-            <ContactImage {...{ firstName, lastName, thumbnailUrl, rootKey }} />
-          </a>
-        ) : (
-          <div className="make-relative">
-            <ContactImage {...{ firstName, lastName, thumbnailUrl, rootKey }} />
-          </div>
-        )}
+    <div className="col-md-3 col-sm-4 col-xs-12 entity-photo-holder">
+      <div classes={classes.hovereffect}>
+        <div className={`element-${rootKey}`}>
+          {speakerId ? (
+            <a href={`/5794/agenda/speakers/${speakerId}`}>
+              <ContactImage
+                {...{ firstName, lastName, thumbnailUrl, rootKey }}
+              />
+            </a>
+          ) : (
+            <div className="make-relative">
+              <ContactImage
+                {...{ firstName, lastName, thumbnailUrl, rootKey }}
+              />
+            </div>
+          )}
+        </div>
+
+        <ContactInfo {...{ firstName, lastName, rootKey, title, company }} />
+
+        <ContactSocial {...{ facebookPage, linkedinPage, twitter, rootKey }} />
       </div>
-
-      <ContactInfo {...{ firstName, lastName, rootKey, title, company }} />
-
-      <ContactSocial {...{ facebookPage, linkedinPage, twitter, rootKey }} />
     </div>
   );
 }
@@ -135,7 +168,7 @@ const ContactImage = props => {
     retVal = <img src={thumbnailUrl} className="center-block" alt="speaker" />;
   } else {
     retVal = (
-      <>
+      <div>
         <img
           src="https://events.bizzabo.com/images/home/empty_placeholder.png"
           className="img-responsive  center-block"
@@ -145,7 +178,7 @@ const ContactImage = props => {
           {firstName.charAt(0).toUpperCase()}
           {lastName.charAt(0).toUpperCase()}
         </div>
-      </>
+      </div>
     );
   }
 
