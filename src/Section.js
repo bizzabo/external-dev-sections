@@ -39,23 +39,24 @@ const useStyles = createUseStyles({
     paddingTop: 8,
     color: "#000",
     "& .contact-fullname": {
-      fontSize: "1rem",
+      fontSize: "0.90rem",
       fontWeight: "bold"
     },
     "& .contact-title": {
-      fontSize: "0.8rem"
+      fontSize: "0.75rem"
     },
     "& .contact-company": {
-      fontSize: "0.8rem",
+      fontSize: "0.75rem",
       fontWeight: "bold"
     }
   },
   socialLinks: {
     display: "flex",
     justifyContent: "center",
-    flexDirection: "center",
     "& i": {
-      margin: 2
+      marginBottom: 1,
+      marginLeft: 2,
+      marginRight: 2
     }
   },
 
