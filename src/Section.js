@@ -3,66 +3,6 @@ import React from "react";
 import { createUseStyles } from "react-jss";
 import classnames from "classnames";
 const useStyles = createUseStyles({
-  gravatar: {
-    position: "absolute",
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    height: "50%",
-    color: "white",
-    margin: "auto",
-    transform: "translate(0, -10%)",
-    fontSize: 70
-  },
-  contactContainer: {
-    display: "block",
-    width: "max-content",
-    marginBottom: 24,
-
-    "& .hover": {
-      overflow: "hidden"
-    },
-
-    "&  .img": {
-      height: "240px",
-      width: "240px",
-      transition: "all .3s ease-in"
-    },
-    "& :hover ": {
-      "& .img": {
-        transform: "scale(1.2)"
-      }
-    }
-  },
-  contactInfoContainer: {
-    paddingTop: 8,
-    color: "#000",
-    "& .contact-fullname": {
-      fontSize: "0.90rem",
-      fontWeight: "bold"
-    },
-    "& .contact-title": {
-      fontSize: "0.75rem"
-    },
-    "& .contact-company": {
-      fontSize: "0.75rem",
-      fontWeight: "bold"
-    }
-  },
-  socialLinks: {
-    display: "flex",
-    justifyContent: "center",
-    "& i": {
-      marginBottom: 1,
-      marginLeft: 2,
-      marginRight: 2
-    }
-  },
-
-  hovereffect: {
-    overflow: "hidden"
-  },
   sectionContainer: {
     "& .main-app-container": {
       "& .center-items": {
@@ -71,9 +11,66 @@ const useStyles = createUseStyles({
         flexDirection: "row",
         justifyContent: "space-around",
         float: "none"
+      },
+      "& .socialLinks": {
+        display: "flex",
+        justifyContent: "center",
+        "& i": {
+          marginBottom: 1,
+          marginLeft: 2,
+          marginRight: 2
+        }
+      },
+      "& .contact-info-container": {
+        paddingTop: 8,
+        color: "#000",
+        "& .contact-fullname": {
+          fontSize: "0.90rem",
+          fontWeight: "bold"
+        },
+        "& .contact-title": {
+          fontSize: "0.75rem"
+        },
+        "& .contact-company": {
+          fontSize: "0.75rem",
+          fontWeight: "bold"
+        }
       }
+    },
+    "& .contact-container": {
+      display: "block",
+      width: "max-content",
+      marginBottom: 24,
+
+      "& .hover": {
+        overflow: "hidden"
+      },
+
+      "& .img": {
+        height: "240px",
+        width: "240px",
+        transition: "all .3s ease-in"
+      },
+      "& :hover ": {
+        "& .img": {
+          transform: "scale(1.2)"
+        }
+      }
+    },
+    "& .gravatar": {
+      position: "absolute",
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0,
+      height: "50%",
+      color: "white",
+      margin: "auto",
+      transform: "translate(0, -10%)",
+      fontSize: 70
     }
   },
+
   "@media ( max-width: 1140px )": {
     sectionContainer: {
       "& .main-app-container": {
@@ -88,14 +85,14 @@ const useStyles = createUseStyles({
       "& .main-app-container": {
         "& .center-items": {
           flexWrap: "wrap"
+        },
+        "& .contact-container": {
+          "&  .img": {
+            height: "180px",
+            width: "180px",
+            transition: "all .3s ease-in"
+          }
         }
-      }
-    },
-    contactContainer: {
-      "&  .img": {
-        height: "180px",
-        width: "180px",
-        transition: "all .3s ease-in"
       }
     }
   },
@@ -104,14 +101,14 @@ const useStyles = createUseStyles({
       "& .main-app-container": {
         "& .center-items": {
           flexWrap: "wrap"
+        },
+        "& .contact-container": {
+          "&  .img": {
+            height: "160px",
+            width: "160px",
+            transition: "all .3s ease-in"
+          }
         }
-      }
-    },
-    contactContainer: {
-      "&  .img": {
-        height: "160px",
-        width: "160px",
-        transition: "all .3s ease-in"
       }
     }
   }
@@ -159,7 +156,6 @@ export default ({ section }) => {
 
 function Contact({ contact, rootKey }) {
   const {
-    id,
     thumbnailUrl,
     firstName,
     lastName,
@@ -170,15 +166,9 @@ function Contact({ contact, rootKey }) {
     title,
     company
   } = contact;
-  const classes = useStyles();
   return (
-    <div
-      className={classnames(
-        "col-md-3 col-sm-4 col-xs-12 ",
-        classes.contactContainer
-      )}
-    >
-      <div classes={classes.hovereffect}>
+    <div className="col-md-3 col-sm-4 col-xs-12 contact-container">
+      <div>
         <div className={`element-${rootKey} hover`}>
           {speakerId ? (
             <a href={`/5794/agenda/speakers/${speakerId}`}>
@@ -203,11 +193,8 @@ function Contact({ contact, rootKey }) {
   );
 }
 function ContactInfo({ rootKey, firstName, lastName, title, company }) {
-  const classes = useStyles();
   return (
-    <div
-      className={classnames(`element-${rootKey}`, classes.contactInfoContainer)}
-    >
+    <div className={`element-${rootKey} contact-info-container`}>
       <div className="atom-text1 contact-fullname">
         {`${firstName} ${lastName}`}
       </div>
@@ -218,7 +205,6 @@ function ContactInfo({ rootKey, firstName, lastName, title, company }) {
 }
 const ContactImage = props => {
   const { firstName, lastName, thumbnailUrl } = props;
-  const classes = useStyles();
   let retVal = null;
 
   if (thumbnailUrl) {
@@ -237,7 +223,7 @@ const ContactImage = props => {
           className="img-responsive  center-block img"
           alt="placeholder"
         />
-        <div className={classes.gravatar}>
+        <div className="gravatar">
           {firstName.charAt(0).toUpperCase()}
           {lastName.charAt(0).toUpperCase()}
         </div>
@@ -248,10 +234,8 @@ const ContactImage = props => {
   return retVal;
 };
 function ContactSocial({ facebookPage, linkedinPage, twitter }) {
-  const classes = useStyles();
-
   return (
-    <div className={classes.socialLinks}>
+    <div className="socialLinks">
       <a href={facebookPage} target="_blank" rel="noopener noreferrer">
         <i className="speaker-icon fa icon-facebook" />
       </a>
