@@ -61,7 +61,8 @@ For example:
 
 ## Important classes
 There are several important classes that must to be included in the section markup:
-- `atom-sectionMain` should be on the top level wrapper of the section  
+- `atom-sectionMain rowHolder` should be on the top level wrapper of the section  
+- `main-app-container custom-space-top custom-space-bottom` another wrapper between the elements and the `rowHolder` wrapper
 - `element-${element.id}` should wrap every element in the section. (for example in the `people` section, `header` and `people` elements).
 - Find another important classes that are section-specific.
 
