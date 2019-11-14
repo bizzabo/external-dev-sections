@@ -80,6 +80,17 @@ const useStyles = createUseStyles({
       }
     }
   },
+  "@media ( min-width: 1141px )": {
+    sectionContainer: {
+      "& .main-app-container": {
+        "& .center-items": {
+          flexWrap: "wrap",
+          justifyContent: "center",
+          width: "1141px"
+        }
+      }
+    }
+  },
   "@media ( max-width: 768px )": {
     sectionContainer: {
       "& .main-app-container": {
@@ -89,8 +100,7 @@ const useStyles = createUseStyles({
         "& .contact-container": {
           "&  .img": {
             height: "180px",
-            width: "180px",
-            transition: "all .3s ease-in"
+            width: "180px"
           }
         }
       }
@@ -105,8 +115,7 @@ const useStyles = createUseStyles({
         "& .contact-container": {
           "&  .img": {
             height: "160px",
-            width: "160px",
-            transition: "all .3s ease-in"
+            width: "160px"
           }
         }
       }
