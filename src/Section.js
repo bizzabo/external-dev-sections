@@ -12,7 +12,7 @@ const useStyles = createUseStyles({
         justifyContent: "space-around",
         float: "none"
       },
-      "& .socialLinks": {
+      "& .social-links": {
         display: "flex",
         justifyContent: "center",
         "& i": {
@@ -244,7 +244,7 @@ const ContactImage = props => {
 };
 function ContactSocial({ facebookPage, linkedinPage, twitter }) {
   return (
-    <div className="socialLinks">
+    <div className="social-links">
       <a href={facebookPage} target="_blank" rel="noopener noreferrer">
         <i className="speaker-icon fa icon-facebook" />
       </a>
