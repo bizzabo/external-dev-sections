@@ -119,25 +119,20 @@ const peopleSectionProps = {
           id: 9876,
           thumbnailUrl: "/images/Artboard-Copy-8.png",
           firstName: "Henry",
-          lastName: "McKinney",
           speakerId: 654567,
           facebookPage: "http://facebook.com",
-          linkedinPage: "http://linkedin.com",
           twitter: "http://twitter.com",
           title: "Avionics Technician",
           company: "Splunk"
         },
         {
           id: 111,
-          thumbnailUrl: "/images/Artboard-Copy-7.png",
+          // thumbnailUrl: "/images/Artboard-Copy-7.png",
           firstName: "Linnie",
           lastName: "West",
           speakerId: 654567,
           facebookPage: "http://facebook.com",
-          linkedinPage: "http://linkedin.com",
-          twitter: "http://twitter.com",
-          title: "Armed Officer",
-          company: "Splunk"
+          linkedinPage: "http://linkedin.com"
         },
         {
           id: 113,

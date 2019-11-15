@@ -7,7 +7,7 @@ const useStyles = createUseStyles({
     "& .main-app-container": {
       "& .center-items": {
         display: "flex",
-        alignItems: "center",
+        alignItems: "flex-start",
         flexDirection: "row",
         justifyContent: "space-around",
         float: "none"
@@ -208,11 +208,12 @@ function Contact({ contact, rootKey }) {
   );
 }
 function ContactInfo({ rootKey, firstName, lastName, title, company }) {
+  const name = `${firstName !== undefined ? firstName : ""} ${
+    lastName !== undefined ? lastName : ""
+  }`;
   return (
     <div className={`element-${rootKey} contact-info-container`}>
-      <div className="atom-text1 contact-fullname">
-        {`${firstName} ${lastName}`}
-      </div>
+      <div className="atom-text1 contact-fullname">{name}</div>
       <div className="atom-text2  contact-title">{title}</div>
       <div className="atom-text3  contact-company">{company}</div>
     </div>
@@ -239,8 +240,8 @@ const ContactImage = props => {
           alt="placeholder"
         />
         <div className="gravatar">
-          {firstName.charAt(0).toUpperCase()}
-          {lastName.charAt(0).toUpperCase()}
+          {firstName && firstName.charAt(0).toUpperCase()}
+          {lastName && lastName.charAt(0).toUpperCase()}
         </div>
       </div>
     );
@@ -251,21 +252,25 @@ const ContactImage = props => {
 function ContactSocial({ facebookPage, linkedinPage, twitter }) {
   return (
     <div className="social-links">
-      <a href={facebookPage} target="_blank" rel="noopener noreferrer">
-        <i className="speaker-icon fa icon-facebook" />
-      </a>
-
-      <a href={linkedinPage} target="_blank" rel="noopener noreferrer">
-        <i className="speaker-icon fa icon-linkedin" />
-      </a>
-
-      <a
-        href={`https://twitter.com/${twitter}`}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <i className="speaker-icon fa icon-twitter" />
-      </a>
+      {facebookPage && (
+        <a href={facebookPage} target="_blank" rel="noopener noreferrer">
+          <i className="speaker-icon fa icon-facebook" />
+        </a>
+      )}
+      {linkedinPage && (
+        <a href={linkedinPage} target="_blank" rel="noopener noreferrer">
+          <i className="speaker-icon fa icon-linkedin" />
+        </a>
+      )}
+      {twitter && (
+        <a
+          href={`https://twitter.com/${twitter}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="speaker-icon fa icon-twitter" />
+        </a>
+      )}
     </div>
   );
 }
