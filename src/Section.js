@@ -75,7 +75,8 @@ const useStyles = createUseStyles({
     sectionContainer: {
       "& .main-app-container": {
         "& .center-items": {
-          flexWrap: "wrap"
+          flexWrap: "wrap",
+          justifyContent: "center"
         }
       }
     }
@@ -85,8 +86,7 @@ const useStyles = createUseStyles({
       "& .main-app-container": {
         "& .center-items": {
           flexWrap: "wrap",
-          justifyContent: "center",
-          width: "1141px"
+          justifyContent: "center"
         }
       }
     }
@@ -95,7 +95,8 @@ const useStyles = createUseStyles({
     sectionContainer: {
       "& .main-app-container": {
         "& .center-items": {
-          flexWrap: "wrap"
+          flexWrap: "wrap",
+          justifyContent: "center"
         },
         "& .contact-container": {
           "&  .img": {
@@ -129,16 +130,21 @@ export default ({ section }) => {
   const classes = useStyles();
   console.log(section);
   return (
-    <div className={classnames("atom-sectionMain", classes.sectionContainer)}>
+    <div
+      className={classnames(
+        "atom-sectionMain rowHolder",
+        classes.sectionContainer
+      )}
+    >
       <div className="col-xs-12 col-sm-12 text-center">
-        <div className="main-app-container  ">
+        <div className="main-app-container  custom-space-top custom-space-bottom">
           <div
             className={`col-xs-12 text-center form-group element-${rootKey}`}
           >
             <h2 className="atom-main medium custom-font">{text}</h2>
           </div>
           <div className="col-xs-12 text-center ">
-            <div className=" center-items ">
+            <div className=" row  center-items ">
               {contactListId ? (
                 contacts.map(contact => (
                   <Contact
