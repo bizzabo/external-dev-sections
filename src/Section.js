@@ -145,7 +145,7 @@ export default ({ section }) => {
           </div>
           <div className="col-xs-12 text-center ">
             <div className=" row  center-items ">
-              {contacts.length>0 ? (
+              {contacts && contacts.length>0 ? (
                 contacts.map(contact => (
                   <Contact
                     key={contact.id}
