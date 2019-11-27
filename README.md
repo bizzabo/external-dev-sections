@@ -101,6 +101,13 @@ In the `people` example section, you can find an example of all the use cases de
 - `atom-2` should be on the contact title
 - `atom-3` should be on the contact company
 
+### Header
+genetral specs for each of the header themes:
+
+when rendering the name of the registerButton check: if it's a custom name, show the custom name else show the selected name. (registerButton.name === 'custom' ? registerButton.customName : registerButton.name})
+
+
+
 ## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
