@@ -108,7 +108,6 @@ when rendering the name of the registerButton check: if it's a custom name, show
 
 link to mockups: https://invis.io/UATNTNOWNVZ#/395126714_HeaderThemeWebHalf_Copy
 
-
 ## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
