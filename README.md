@@ -106,7 +106,7 @@ genetral specs for each of the header themes:
 
 when rendering the name of the registerButton check: if it's a custom name, show the custom name else show the selected name. (registerButton.name === 'custom' ? registerButton.customName : registerButton.name})
 
-
+link to mockups: https://invis.io/UATNTNOWNVZ#/395126714_HeaderThemeWebHalf_Copy
 
 ## Create React App
 
