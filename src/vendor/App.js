@@ -117,35 +117,28 @@ const peopleSectionProps = {
       contacts: [
         {
           id: 9876,
-          thumbnailUrl: "",
-          firstName: "Adi",
-          lastName: "Gibs",
+          thumbnailUrl: "/images/Artboard-Copy-8.png",
+          firstName: "Henry",
           speakerId: 654567,
           facebookPage: "http://facebook.com",
-          linkedinPage: "http://linkedin.com",
           twitter: "http://twitter.com",
-          title: "Legal Clerk",
-          company: "Analog Devices"
+          title: "Avionics Technician",
+          company: "Splunk"
         },
         {
           id: 111,
-          thumbnailUrl:
-            "https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_270,h_270,c_fill,g_face,fl_any_format,q_auto:best/jond0kyi2g4l8987wcfi.jpg",
-          firstName: "Adi123",
-          lastName: "Gibs654",
+          // thumbnailUrl: "/images/Artboard-Copy-7.png",
+          firstName: "Linnie",
+          lastName: "West",
           speakerId: 654567,
           facebookPage: "http://facebook.com",
-          linkedinPage: "http://linkedin.com",
-          twitter: "http://twitter.com",
-          title: "Legal Clerk",
-          company: "Analog Devices"
+          linkedinPage: "http://linkedin.com"
         },
         {
           id: 113,
-          thumbnailUrl:
-            "https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_270,h_270,c_fill,g_face,fl_any_format,q_auto:best/jond0kyi2g4l8987wcfi.jpg",
-          firstName: "Adi123",
-          lastName: "Gibs654",
+          thumbnailUrl: "/images/Artboard-Copy-6.png",
+          firstName: "Marian",
+          lastName: "Gibson",
           speakerId: 654567,
           facebookPage: "http://facebook.com",
           linkedinPage: "http://linkedin.com",
@@ -155,19 +148,29 @@ const peopleSectionProps = {
         },
         {
           id: 114,
-          thumbnailUrl:
-            "https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_270,h_270,c_fill,g_face,fl_any_format,q_auto:best/jond0kyi2g4l8987wcfi.jpg",
-          firstName: "Adi123",
-          lastName: "Gibs654",
+          thumbnailUrl: "/images/Artboard-Copy-9.png",
+          firstName: "Leon",
+          lastName: "Gilbert",
           speakerId: 654567,
           facebookPage: "http://facebook.com",
           linkedinPage: "http://linkedin.com",
           twitter: "http://twitter.com",
-          title: "Legal Clerk",
-          company: "Analog Devices"
+          title: "Ligitation Attorney",
+          company: "Adobe Systems"
+        },
+        {
+          id: 115,
+          thumbnailUrl: "/images/Artboard.png",
+          firstName: "Nina",
+          lastName: "Fletcher",
+          speakerId: 654567,
+          facebookPage: "http://facebook.com",
+          linkedinPage: "http://linkedin.com",
+          twitter: "http://twitter.com",
+          title: "Legal Counsel",
+          company: "Netflix"
         }
-      ],
-      displayAttributes: []
+      ]
     }
   ]
 };
